@@ -1,0 +1,13 @@
+body {
+      color: red;
+      $bg: grey;
+      background: $bg;
+      background: black;
+
+      div {
+            background: blue;
+            color: pink;
+            width: 10rem;
+            aspect-ratio: 1;
+      }
+}
