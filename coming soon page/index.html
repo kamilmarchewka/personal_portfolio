@@ -11,15 +11,35 @@
 
             <style>
                   body {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
                         margin: 0;
                         padding: 0;
                         background-image: url("./portfolio-coming-soon-bg.svg"),
                               linear-gradient(black, black);
-                        background-size: cover;
-                        background-position: center;
+                        background-size: max(30rem, 110%);
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
                         height: 100vh;
+                  }
+
+                  .contact-info {
+                        text-align: center;
+                        padding: 0 1.5rem;
+                        color: rgb(139, 139, 139);
+                  }
+                  a {
+                        color: white;
                   }
             </style>
       </head>
-      <body></body>
+      <body>
+            <p class="contact-info">
+                  Contact:
+                  <a href="mailto:kamilmarchewka.design@gmail.com"
+                        >kamilmarchewka.design@gmail.com</a
+                  >
+            </p>
+      </body>
 </html>
