@@ -10,36 +10,66 @@
             <title>Web Designer & Frontend Developer | Portfolio</title>
 
             <style>
+                  html {
+                        height: -webkit-fill-available;
+                  }
                   body {
                         display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        min-height: -webkit-fill-available;
+                        position: relative;
+                        overflow: hidden;
+                  }
+                  header {
+                        display: flex;
                         flex-direction: column;
-                        justify-content: flex-end;
-                        margin: 0;
-                        padding: 0;
-                        background-image: url("./portfolio-coming-soon-bg.svg"),
-                              linear-gradient(black, black);
-                        background-size: max(30rem, 110%);
-                        background-repeat: no-repeat;
-                        background-position: center bottom;
-                        height: 100vh;
+                        justify-content: center;
+                        align-items: flex-start;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2em;
+                        width: 80%;
+                        max-width: 75rem;
                   }
-
-                  .contact-info {
-                        text-align: center;
-                        padding: 0 1.5rem;
-                        color: rgb(139, 139, 139);
+                  @media (max-width: 53.6875em) {
+                        header {
+                              width: 100%;
+                              padding: 2rem 1.5rem;
+                              text-align: center;
+                              align-items: center;
+                        }
                   }
-                  a {
-                        color: white;
+                  h1 {
+                        font-size: clamp(2.7rem, 10vw, 10rem);
+                        letter-spacing: 0.1em;
+                        margin-bottom: 0;
+                  }
+                  p {
+                        max-width: 40em;
+                        line-height: 1.5;
+                        font-size: clamp(0.8rem, 2vw, 1rem);
+                  }
+                  img {
+                        display: block;
+                        width: 50rem;
+                        position: absolute;
+                        left: 65%;
+                        bottom: 0;
                   }
             </style>
       </head>
       <body>
-            <p class="contact-info">
-                  Contact:
-                  <a href="mailto:kamilmarchewka.design@gmail.com"
-                        >kamilmarchewka.design@gmail.com</a
-                  >
-            </p>
+            <img
+                  src="./hero-coming-soon.png"
+                  alt="black and white portrait of young man"
+            />
+            <header>
+                  <h1>Coming soon!!!</h1>
+                  <p>
+                        find me on: facebook, pinterest, behance, dribble. leave
+                        me a message: kamilmarchewka .design@gmail.com
+                  </p>
+            </header>
       </body>
 </html>
