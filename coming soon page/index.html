@@ -24,6 +24,21 @@
                         position: relative;
                         overflow: hidden;
                   }
+                  body::after {
+                        content: "";
+                        display: block;
+                        width: 50%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: linear-gradient(
+                              to right,
+                              rgba(255, 255, 255, 0),
+                              rgba(255, 255, 255, 0.671)
+                        );
+                        z-index: -1;
+                  }
                   header {
                         display: flex;
                         flex-direction: column;
@@ -41,6 +56,9 @@
                               text-align: center;
                               align-items: center;
                         }
+                        img {
+                              transform: translateY(15%);
+                        }
                   }
                   h1 {
                         font-size: clamp(2.7rem, 10vw, 10rem);
@@ -50,7 +68,8 @@
                   p {
                         max-width: 40em;
                         line-height: 1.5;
-                        font-size: clamp(0.8rem, 2vw, 1rem);
+                        font-size: clamp(0.8rem, 1.85vw, 0.95rem);
+                        color: rgb(85, 85, 85);
                   }
                   img {
                         display: block;
@@ -58,6 +77,19 @@
                         position: absolute;
                         left: 65%;
                         bottom: -8rem;
+                        user-select: none;
+                        pointer-events: none;
+                        opacity: 1;
+                        z-index: -1;
+                  }
+
+                  a {
+                        color: black;
+                        font-weight: 700;
+                        text-decoration: none;
+                  }
+                  a:hover {
+                        text-decoration: line-through;
                   }
             </style>
       </head>
@@ -69,8 +101,37 @@
             <header>
                   <h1>Coming soon!!!</h1>
                   <p>
-                        find me on: facebook, pinterest, behance, dribble. leave
-                        me a message: kamilmarchewka .design@gmail.com
+                        find me on:
+                        <a
+                              target="_blank"
+                              href="https://www.facebook.com/kamil.marchewka.370/"
+                              >facebook</a
+                        >,
+                        <a
+                              target="_blank"
+                              href="https://www.pinterest.ca/kamil_web_dev/"
+                              >pinterest</a
+                        >,
+                        <a
+                              target="_blank"
+                              href="https://dribbble.com/kamil_design/about"
+                              >dribble</a
+                        >,
+                        <a
+                              target="_blank"
+                              href="https://www.behance.net/kamilmarchewka1"
+                              >behance</a
+                        >,
+                        <a
+                              target="_blank"
+                              href="https://github.com/kamilmarchewka?tab=repositories"
+                              >github</a
+                        >. leave me a message:
+                        <a
+                              target="_blank"
+                              href="mailto:kamilmarchewka.design@gmail.com"
+                              >kamilmarchewka .design@gmail.com</a
+                        >
                   </p>
             </header>
       </body>
