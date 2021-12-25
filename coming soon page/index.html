@@ -16,28 +16,23 @@
                   body {
                         margin: 0;
                         padding: 0;
+
+                        height: 100vh;
+                        height: -webkit-fill-available;
+                        overflow: hidden;
+                  }
+                  .wrapper {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        min-height: 100vh;
-                        min-height: -webkit-fill-available;
                         position: relative;
-                        overflow: hidden;
-                  }
-                  body::after {
-                        content: "";
-                        display: block;
-                        width: 50%;
-                        height: 100%;
-                        position: absolute;
-                        top: 0;
-                        right: 0;
                         background: linear-gradient(
-                              to right,
+                              115deg,
                               rgba(255, 255, 255, 0),
-                              rgba(255, 255, 255, 0.671)
+                              rgba(255, 255, 255, 1)
                         );
-                        z-index: -1;
+                        overflow: hidden;
+                        height: 100%;
                   }
                   header {
                         display: flex;
@@ -49,17 +44,7 @@
                         width: 80%;
                         max-width: 75rem;
                   }
-                  @media (max-width: 53.6875em) {
-                        header {
-                              width: 100%;
-                              padding: 2rem 1.5rem;
-                              text-align: center;
-                              align-items: center;
-                        }
-                        img {
-                              transform: translateY(15%);
-                        }
-                  }
+
                   h1 {
                         font-size: clamp(2.7rem, 10vw, 10rem);
                         letter-spacing: 0.1em;
@@ -91,48 +76,62 @@
                   a:hover {
                         text-decoration: line-through;
                   }
+
+                  @media (max-width: 53.6875em) {
+                        header {
+                              width: 100%;
+                              padding: 2rem 1.5rem;
+                              text-align: center;
+                              align-items: center;
+                        }
+                        img {
+                              transform: translateY(15%);
+                        }
+                  }
             </style>
       </head>
       <body>
-            <img
-                  src="./hero-coming-soon.png"
-                  alt="black and white portrait of young man"
-            />
-            <header>
-                  <h1>Coming soon!!!</h1>
-                  <p>
-                        find me on:
-                        <a
-                              target="_blank"
-                              href="https://www.facebook.com/kamil.marchewka.370/"
-                              >facebook</a
-                        >,
-                        <a
-                              target="_blank"
-                              href="https://www.pinterest.ca/kamil_web_dev/"
-                              >pinterest</a
-                        >,
-                        <a
-                              target="_blank"
-                              href="https://dribbble.com/kamil_design/about"
-                              >dribble</a
-                        >,
-                        <a
-                              target="_blank"
-                              href="https://www.behance.net/kamilmarchewka1"
-                              >behance</a
-                        >,
-                        <a
-                              target="_blank"
-                              href="https://github.com/kamilmarchewka?tab=repositories"
-                              >github</a
-                        >. leave me a message:
-                        <a
-                              target="_blank"
-                              href="mailto:kamilmarchewka.design@gmail.com"
-                              >kamilmarchewka .design@gmail.com</a
-                        >
-                  </p>
-            </header>
+            <div class="wrapper">
+                  <img
+                        src="./hero-coming-soon.png"
+                        alt="black and white portrait of young man"
+                  />
+                  <header>
+                        <h1>Coming soon!!!</h1>
+                        <p>
+                              find me on:
+                              <a
+                                    target="_blank"
+                                    href="https://www.facebook.com/kamil.marchewka.370/"
+                                    >facebook</a
+                              >,
+                              <a
+                                    target="_blank"
+                                    href="https://www.pinterest.ca/kamil_web_dev/"
+                                    >pinterest</a
+                              >,
+                              <a
+                                    target="_blank"
+                                    href="https://dribbble.com/kamil_design/about"
+                                    >dribble</a
+                              >,
+                              <a
+                                    target="_blank"
+                                    href="https://www.behance.net/kamilmarchewka1"
+                                    >behance</a
+                              >,
+                              <a
+                                    target="_blank"
+                                    href="https://github.com/kamilmarchewka?tab=repositories"
+                                    >github</a
+                              >. leave me a message:
+                              <a
+                                    target="_blank"
+                                    href="mailto:kamilmarchewka.design@gmail.com"
+                                    >kamilmarchewka .design@gmail.com</a
+                              >
+                        </p>
+                  </header>
+            </div>
       </body>
 </html>
