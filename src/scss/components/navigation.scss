@@ -1,0 +1,78 @@
+@use "../utils" as *;
+
+.toggler {
+      $r: &;
+      --pt: 0.2rem;
+      --pl: 0.5rem;
+
+      display: block;
+      position: relative;
+      z-index: 1000;
+      margin-left: auto;
+      text-align: right;
+      padding: var(--pt) var(--pl);
+
+      // background: pink;
+      overflow: hidden;
+
+      span {
+            display: inline-block;
+            transition: 200ms ease;
+      }
+      &__open {
+            transform: translateY(0);
+            #{$r}[aria-expanded="true"] & {
+                  transform: translateY(-110%);
+            }
+      }
+
+      &__close {
+            position: absolute;
+            right: var(--pl);
+            top: var(--pt);
+            transform: translateY(110%);
+            #{$r}[aria-expanded="true"] & {
+                  transform: translateY(0);
+            }
+      }
+}
+
+.navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: $clr-white;
+      width: 100%;
+      padding: rem(20);
+
+      &__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $clr-white;
+            height: 100vh;
+            width: 100%;
+            transform: translateY(51%) scaleY(0);
+      }
+
+      ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+      }
+
+      li {
+            margin: 0.5rem 0;
+      }
+
+      .nav-link {
+            display: block;
+            text-align: center;
+      }
+}

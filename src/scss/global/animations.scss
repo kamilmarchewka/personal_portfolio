@@ -1,0 +1,32 @@
+@keyframes navopening {
+      0% {
+            transform: translateY(51%) scaleY(0);
+      }
+      10% {
+            transform: translateY(35%) scaleY(0);
+      }
+      100% {
+            transform: translateY(0%) scaleY(1);
+      }
+}
+.nav-opening {
+      animation: navopening 250ms ease-in-out forwards;
+}
+
+@keyframes navclosing {
+      0% {
+            // transform: translateY(51%) scaleY(0);
+            transform: translateY(0%) scaleY(1);
+      }
+      99% {
+            // transform: translateY(0%) scaleY(1);
+            transform: translateY(101%) scaleY(1);
+      }
+      100% {
+            // transform: translateY(0%) scaleY(1);
+            transform: translateY(51%) scaleY(0);
+      }
+}
+.nav-closing {
+      animation: navclosing 250ms ease-in-out;
+}

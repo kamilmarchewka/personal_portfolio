@@ -1,0 +1,43 @@
+@use "../utils" as *;
+
+h1 {
+      font-size: rem(39);
+      font-family: $ff-serif;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.15;
+}
+h2 {
+      font-size: rem(25);
+}
+h3 {
+      font-size: rem(20);
+}
+p {
+      font-size: rem(16);
+}
+.toggler {
+      font-family: $ff-sans;
+      font-size: rem(12);
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+}
+.date {
+      font-family: $ff-sans;
+      font-weight: 300;
+      color: $clr-gray;
+      font-size: rem(11);
+      letter-spacing: 0.05em;
+}
+.nav-link {
+      font-family: $ff-sans;
+      font-weight: 600;
+      font-size: rem(32);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      &:link,
+      &:visited {
+            color: $clr-black;
+      }
+}

@@ -1,0 +1,18 @@
+@use "../utils" as *;
+
+*,
+*::before,
+*::after {
+      box-sizing: inherit;
+}
+html {
+}
+body {
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 300vh;
+      margin: 0;
+      padding: 0;
+      background: $clr-black;
+      color: $clr-white;
+}
