@@ -5,7 +5,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 6rem;
+      padding-top: 8rem;
 
       @include breakpoint(medium) {
             display: grid;
@@ -13,6 +13,10 @@
             grid-template-rows: auto auto auto;
             grid-template-areas: "heading img navigation" "socials img ." "quotation quotation quotation";
             gap: rem(20);
+
+            // .logo {
+            //       grid-area: logo;
+            // }
 
             .hero-img {
                   grid-area: img;
@@ -42,6 +46,31 @@
             grid-template-rows: auto auto;
             grid-template-areas: "heading img navigation" "socials img quotation";
             gap: rem(20);
+      }
+
+      .logo {
+            display: none;
+
+            @include breakpoint(medium) {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  padding: 0.7rem 0;
+                  background: $clr-white;
+            }
+
+            svg {
+                  width: 2rem;
+            }
+
+            circle,
+            path {
+                  fill: $clr-black;
+            }
       }
 
       .hero-img {
@@ -92,10 +121,14 @@
 .hero-img {
       position: relative;
       width: 75%;
+      // opacity: 0.2;
 
       @include breakpoint(medium) {
             width: 34vw;
             max-width: 17rem;
+      }
+      @include breakpoint(large) {
+            max-width: 30rem;
       }
 
       &__box {

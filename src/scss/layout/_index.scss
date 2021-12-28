@@ -10,4 +10,8 @@ main {
             max-width: 57rem;
             width: 92%;
       }
+      @include breakpoint(large) {
+            max-width: 90rem;
+            width: 92%;
+      }
 }

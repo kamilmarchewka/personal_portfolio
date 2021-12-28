@@ -1,7 +1,7 @@
 @use "../utils" as *;
 
 h1 {
-      font-size: rem(39);
+      font-size: clamp(rem(39), 4vw, rem(65));
       font-family: $ff-serif;
       text-transform: uppercase;
       line-height: 1.15;
