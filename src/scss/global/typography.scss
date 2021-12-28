@@ -4,7 +4,6 @@ h1 {
       font-size: rem(39);
       font-family: $ff-serif;
       text-transform: uppercase;
-      text-align: center;
       line-height: 1.15;
 }
 h2 {
@@ -14,7 +13,11 @@ h3 {
       font-size: rem(20);
 }
 p {
+      font-family: $ff-sans;
       font-size: rem(16);
+      line-height: 1.7;
+      font-weight: 400;
+      color: $clr-gray;
 }
 .toggler {
       font-family: $ff-sans;
@@ -38,8 +41,17 @@ p {
       font-size: rem(32);
       letter-spacing: 0.05em;
       text-transform: uppercase;
+
+      @include breakpoint(medium) {
+            font-size: rem(12);
+            font-weight: 300;
+      }
       &:link,
       &:visited {
             color: $clr-black;
+
+            @include breakpoint(medium) {
+                  color: $clr-gray;
+            }
       }
 }

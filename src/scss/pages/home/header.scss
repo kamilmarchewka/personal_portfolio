@@ -7,34 +7,103 @@
       align-items: center;
       margin-top: 6rem;
 
+      @include breakpoint(medium) {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "heading img navigation" "socials img ." "quotation quotation quotation";
+            gap: rem(20);
+
+            .hero-img {
+                  grid-area: img;
+            }
+
+            h1 {
+                  grid-area: heading;
+                  align-self: flex-start;
+            }
+
+            .socials {
+                  grid-area: socials;
+                  align-self: flex-end;
+            }
+            .navigation {
+                  grid-area: navigation;
+                  align-self: flex-start;
+            }
+            .quotation {
+                  grid-area: quotation;
+                  place-self: center;
+            }
+      }
+
+      @include breakpoint(large) {
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "heading img navigation" "socials img quotation";
+            gap: rem(20);
+      }
+
       .hero-img {
       }
 
       h1 {
             margin-top: -0.5rem;
+            max-width: 7em;
+            text-align: center;
+
+            @include breakpoint(medium) {
+                  text-align: right;
+                  margin-top: 0;
+                  margin-bottom: 0;
+            }
       }
 
       .socials {
-            // display: none;
+            display: none;
+            @include breakpoint(medium) {
+                  display: flex;
+            }
       }
 
       .navigation {
             &__socials {
+                  display: flex;
+                  @include breakpoint(medium) {
+                        display: none;
+                  }
             }
       }
 
       .quotation {
             display: none;
+
+            @include breakpoint(medium) {
+                  display: flex;
+                  margin: 15rem 0;
+            }
+
+            @include breakpoint(large) {
+                  margin: 0;
+            }
       }
 }
 
 .hero-img {
       position: relative;
+      width: 75%;
+
+      @include breakpoint(medium) {
+            width: 34vw;
+            max-width: 17rem;
+      }
 
       &__box {
             position: relative;
             aspect-ratio: 1 / 1.3;
-            width: 65vw;
+            // width: 65vw;
+            // width: 100%;
+            // height: 10rem;
             background: $clr-white;
             overflow: hidden;
             z-index: -1;
@@ -52,9 +121,16 @@
       .date {
             display: block;
             position: absolute;
-            left: 0;
-            top: 0;
+            left: -1px;
+            top: 2px;
             transform-origin: top left;
-            transform: translate(-2px, 1px) rotate(90deg);
+            transform: rotate(90deg);
+
+            @include breakpoint(medium) {
+                  top: 100%;
+                  left: unset;
+                  right: 1px;
+                  transform: rotate(0);
+            }
       }
 }

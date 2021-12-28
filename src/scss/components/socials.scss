@@ -5,13 +5,37 @@
       justify-content: center;
       align-items: center;
       gap: 0.7rem;
+      @include breakpoint(medium) {
+            gap: rem(11);
+            justify-content: flex-end;
+      }
 
       .social {
             font-size: 2.6rem;
 
+            @include breakpoint(medium) {
+                  font-size: rem(26);
+            }
+
             &:visited,
             &:link {
                   color: $clr-black;
+            }
+      }
+
+      .social--light {
+            &:visited,
+            &:link {
+                  color: $clr-white;
+                  opacity: 0.4;
+            }
+            @media (hover) {
+                  transition: opacity 150ms ease;
+
+                  &:hover,
+                  &:focus-visible {
+                        opacity: 1;
+                  }
             }
       }
 }

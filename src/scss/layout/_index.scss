@@ -1,4 +1,13 @@
+@use "../utils" as *;
+
 main {
       margin: 0 auto;
-      max-width: 62.5rem;
+      // background: pink;
+      width: 92%;
+      max-width: 20rem;
+
+      @include breakpoint(medium) {
+            max-width: 57rem;
+            width: 92%;
+      }
 }
