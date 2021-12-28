@@ -1,0 +1,26 @@
+@use "../utils" as *;
+
+.section-indicator {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+      position: fixed;
+      top: 50%;
+      right: rem(15);
+      transform: translateY(-50%);
+
+      @media (max-width: 87.4375em) {
+            display: none;
+      }
+
+      &__placeholder {
+            width: rem(6);
+            height: rem(60);
+            background: $clr-white;
+            opacity: 0.15;
+      }
+
+      .s1 {
+            opacity: 0.9;
+      }
+}

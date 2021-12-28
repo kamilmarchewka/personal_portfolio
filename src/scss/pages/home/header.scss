@@ -63,13 +63,13 @@
                   position: fixed;
                   top: 0;
                   left: 0;
-                  right: 0;
+                  width: 100%;
                   padding: 0.7rem 0;
                   background: $clr-white;
             }
 
             svg {
-                  width: 2rem;
+                  width: 2.3rem;
             }
 
             circle,
@@ -129,7 +129,7 @@
       // opacity: 0.2;
 
       @include breakpoint(medium) {
-            width: 34vw;
+            width: 30vw;
             max-width: 17rem;
       }
       @include breakpoint(large) {

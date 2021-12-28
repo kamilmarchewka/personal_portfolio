@@ -11,6 +11,7 @@
       text-align: right;
       padding: var(--pt) var(--pl);
       overflow: hidden;
+      cursor: pointer;
 
       @include breakpoint(medium) {
             display: none;
@@ -48,7 +49,7 @@
       z-index: 999;
       background: $clr-white;
       width: 100%;
-      padding: rem(20);
+      padding: rem(12) rem(20);
 
       @include breakpoint(medium) {
             position: initial;
@@ -58,6 +59,8 @@
       }
 
       &__logo {
+            display: flex;
+            align-items: center;
             position: relative;
             z-index: 1000;
             margin-left: 0.5rem;
