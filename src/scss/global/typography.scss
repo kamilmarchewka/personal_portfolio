@@ -1,57 +1,116 @@
 @use "../utils" as *;
 
 h1 {
-      font-size: clamp(rem(39), 4vw, rem(65));
-      font-family: $ff-serif;
-      text-transform: uppercase;
-      line-height: 1.15;
+  font-size: clamp(rem(39), 4vw, rem(65));
+  font-family: $ff-serif;
+  text-transform: uppercase;
+  line-height: 1.15;
 }
 h2 {
-      font-size: rem(25);
+  font-size: rem(25);
+  font-size: rem(30);
+  font-size: rem(35);
+  font-family: $ff-serif;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 h3 {
-      font-size: rem(20);
+  font-size: rem(20);
+  font-size: rem(25);
+  font-family: $ff-sans;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 p {
-      font-family: $ff-sans;
-      font-size: rem(16);
-      line-height: 1.7;
-      font-weight: 400;
-      color: $clr-gray;
+  font-family: $ff-sans;
+  font-size: rem(16);
+  line-height: 1.7;
+  font-weight: 400;
+  color: $clr-gray;
 }
 .toggler {
-      font-family: $ff-sans;
-      font-size: rem(12);
-      text-transform: uppercase;
-      font-weight: 300;
-      color: $clr-black;
+  font-family: $ff-sans;
+  font-size: rem(12);
+  text-transform: uppercase;
+  font-weight: 300;
+  color: $clr-black;
 
-      letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 }
 .date {
-      font-family: $ff-sans;
-      font-weight: 300;
-      color: $clr-gray;
-      font-size: rem(11);
-      letter-spacing: 0.05em;
+  font-family: $ff-sans;
+  font-weight: 300;
+  color: $clr-gray;
+  font-size: rem(11);
+  letter-spacing: 0.05em;
 }
 .nav-link {
-      font-family: $ff-sans;
-      font-weight: 600;
-      font-size: rem(32);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+  font-family: $ff-sans;
+  font-weight: 600;
+  font-size: rem(32);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 
-      @include breakpoint(medium) {
-            font-size: rem(12);
-            font-weight: 300;
-      }
-      &:link,
-      &:visited {
-            color: $clr-black;
+  @include breakpoint(medium) {
+    font-size: rem(12);
+    font-weight: 300;
+  }
+  &:link,
+  &:visited {
+    color: $clr-black;
 
-            @include breakpoint(medium) {
-                  color: $clr-gray;
-            }
-      }
+    @include breakpoint(medium) {
+      color: $clr-gray;
+    }
+  }
+}
+
+.btn,
+.btn-secondary {
+  font-family: $ff-sans;
+  font-size: rem(15);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.btn {
+  color: $clr-black;
+  font-weight: bold;
+}
+.btn-secondary {
+  color: $clr-white;
+  font-weight: normal;
+}
+
+.about-me__word {
+  text-transform: uppercase;
+  font-family: $ff-sans;
+  font-weight: 300;
+}
+.w1 {
+  font-size: rem(27);
+}
+.w2 {
+  font-size: rem(25);
+}
+.w3 {
+  font-size: rem(19);
+}
+.w4 {
+  font-size: rem(22);
+}
+.w5 {
+  font-size: rem(25);
+}
+.w6 {
+  font-size: rem(27);
+}
+.w7 {
+  font-size: rem(14);
+}
+
+.label {
+  color: $clr-gray;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: rem(12);
 }

@@ -1,0 +1,58 @@
+@use "../../utils" as *;
+
+.projects {
+  padding: 5rem 0;
+  text-align: center;
+
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+
+  @include breakpoint(large) {
+    margin-top: rem(80);
+  }
+
+  &__header {
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(130);
+    }
+    @include breakpoint(large) {
+      padding: 0 1rem;
+    }
+    .btn {
+      display: none;
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+    }
+  }
+
+  h2 {
+    @include breakpoint(medium) {
+      margin: 0;
+    }
+  }
+
+  &__container {
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6.5rem;
+
+      @include breakpoint(medium) {
+        gap: 10rem;
+      }
+      @include breakpoint(large) {
+        gap: 15rem;
+      }
+    }
+
+    li {
+    }
+  }
+}

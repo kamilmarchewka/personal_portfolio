@@ -1,0 +1,41 @@
+@use "../../utils" as *;
+
+.contact {
+  text-align: center;
+
+  header {
+  }
+  h2 {
+  }
+
+  &__content {
+  }
+
+  &__info {
+    h3 {
+      margin: 0;
+    }
+    span {
+      font-family: $ff-sans;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: rem(19);
+      color: $clr-gray;
+    }
+  }
+
+  &__form {
+  }
+}
+
+.input-box {
+  &__label {
+  }
+  &__input {
+  }
+}
+
+footer {
+  p {
+  }
+}

@@ -3,18 +3,18 @@
 *,
 *::before,
 *::after {
-      box-sizing: inherit;
+  box-sizing: inherit;
 }
 html {
-      // width: 100%;
+  // width: 100%;
 }
 body {
-      box-sizing: border-box;
-      width: 100%;
-      min-height: 300vh;
-      margin: 0;
-      padding: 0;
-      background: $clr-black;
-      color: $clr-white;
-      overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 300vh;
+  margin: 0;
+  padding: 0;
+  background: $clr-black;
+  color: $clr-white;
+  // overflow: hidden;
 }

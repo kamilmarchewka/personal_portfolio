@@ -1,0 +1,119 @@
+@use "../utils" as *;
+
+.project-card {
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "heading img ." "content content content";
+    gap: rem(30);
+  }
+
+  h3 {
+    margin: rem(20) 0 rem(10);
+
+    @include breakpoint(medium) {
+      grid-area: heading;
+      margin: 0;
+      max-width: 7em;
+      text-align: right;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+
+    @include breakpoint(medium) {
+      grid-area: img;
+    }
+
+    img {
+      display: block;
+      aspect-ratio: 1 / 1.2;
+      width: 100%;
+      max-width: 20rem;
+      object-fit: cover;
+    }
+
+    .date {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 1px);
+
+      @include breakpoint(medium) {
+        left: calc(100% + 2px);
+        top: 1px;
+        transform-origin: bottom left;
+        transform: translateY(-100%) rotate(90deg);
+      }
+    }
+  }
+
+  &__description {
+    @include breakpoint(medium) {
+      grid-area: content;
+      max-width: 35em;
+      justify-self: center;
+    }
+
+    @include breakpoint(large) {
+      max-width: 25em;
+      align-self: flex-end;
+    }
+
+    p {
+      margin-top: 0;
+
+      @include breakpoint(medium) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__btn-box {
+    display: flex;
+    justify-content: space-around;
+
+    @include breakpoint(medium) {
+      justify-content: flex-start;
+      gap: rem(65);
+    }
+    button {
+    }
+  }
+
+  &--odd {
+    @include breakpoint(large) {
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto auto;
+      grid-template-areas: "heading img ." ". img content";
+      gap: rem(30);
+    }
+  }
+
+  &--even {
+    @include breakpoint(large) {
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto auto;
+      grid-template-areas: ". img heading" "content img .";
+      gap: rem(30);
+
+      h3 {
+        text-align: left;
+      }
+
+      p {
+        text-align: right;
+      }
+      .project-card__btn-box {
+        justify-content: flex-end;
+      }
+      .date {
+        left: -2px;
+        transform-origin: top left;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

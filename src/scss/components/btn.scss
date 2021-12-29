@@ -1,0 +1,13 @@
+@use "../utils" as *;
+.btn {
+  display: block;
+  padding: rem(20) rem(50);
+  background: $clr-white;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.7;
+  }
+}

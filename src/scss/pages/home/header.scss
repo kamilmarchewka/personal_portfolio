@@ -1,174 +1,176 @@
 @use "../../utils" as *;
 
 .main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "heading img navigation" "socials img ." "quotation quotation quotation";
+    gap: rem(20);
+
+    // .logo {
+    //       grid-area: logo;
+    // }
+
+    .hero-img {
+      grid-area: img;
+    }
+
+    h1 {
+      grid-area: heading;
+      align-self: flex-start;
+    }
+
+    .socials {
+      grid-area: socials;
+      align-self: flex-end;
+    }
+    .navigation {
+      grid-area: navigation;
+      align-self: flex-start;
+    }
+    .quotation {
+      grid-area: quotation;
+      place-self: center;
+    }
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "heading img navigation" "socials img quotation";
+    gap: rem(20);
+    padding: 8rem 0 rem(160);
+
+    .quotation {
+      align-self: flex-end;
+      justify-self: flex-start;
+    }
+  }
+
+  .logo {
+    display: none;
+
+    @include breakpoint(medium) {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 8rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 0.7rem 0;
+      background: $clr-white;
+    }
 
+    svg {
+      width: 2.3rem;
+    }
+
+    circle,
+    path {
+      fill: $clr-black;
+    }
+  }
+
+  // .hero-img {
+  // }
+
+  h1 {
+    margin-top: -0.5rem;
+    max-width: 7em;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      text-align: right;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .socials {
+    display: none;
+    @include breakpoint(medium) {
+      display: flex;
+    }
+  }
+
+  .navigation {
+    &__socials {
+      display: flex;
       @include breakpoint(medium) {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto auto auto;
-            grid-template-areas: "heading img navigation" "socials img ." "quotation quotation quotation";
-            gap: rem(20);
-
-            // .logo {
-            //       grid-area: logo;
-            // }
-
-            .hero-img {
-                  grid-area: img;
-            }
-
-            h1 {
-                  grid-area: heading;
-                  align-self: flex-start;
-            }
-
-            .socials {
-                  grid-area: socials;
-                  align-self: flex-end;
-            }
-            .navigation {
-                  grid-area: navigation;
-                  align-self: flex-start;
-            }
-            .quotation {
-                  grid-area: quotation;
-                  place-self: center;
-            }
+        display: none;
       }
+    }
+  }
 
-      @include breakpoint(large) {
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto auto;
-            grid-template-areas: "heading img navigation" "socials img quotation";
-            gap: rem(20);
+  .quotation {
+    display: none;
 
-            .quotation {
-                  align-self: flex-end;
-                  justify-self: flex-start;
-            }
-      }
+    @include breakpoint(medium) {
+      display: flex;
+      margin: 15rem 0;
+    }
 
-      .logo {
-            display: none;
-
-            @include breakpoint(medium) {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: fixed;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  padding: 0.7rem 0;
-                  background: $clr-white;
-            }
-
-            svg {
-                  width: 2.3rem;
-            }
-
-            circle,
-            path {
-                  fill: $clr-black;
-            }
-      }
-
-      .hero-img {
-      }
-
-      h1 {
-            margin-top: -0.5rem;
-            max-width: 7em;
-            text-align: center;
-
-            @include breakpoint(medium) {
-                  text-align: right;
-                  margin-top: 0;
-                  margin-bottom: 0;
-            }
-      }
-
-      .socials {
-            display: none;
-            @include breakpoint(medium) {
-                  display: flex;
-            }
-      }
-
-      .navigation {
-            &__socials {
-                  display: flex;
-                  @include breakpoint(medium) {
-                        display: none;
-                  }
-            }
-      }
-
-      .quotation {
-            display: none;
-
-            @include breakpoint(medium) {
-                  display: flex;
-                  margin: 15rem 0;
-            }
-
-            @include breakpoint(large) {
-                  margin: 0;
-            }
-      }
+    @include breakpoint(large) {
+      margin: 0;
+    }
+  }
 }
 
 .hero-img {
-      position: relative;
-      width: 75%;
-      // opacity: 0.2;
+  position: relative;
+  width: 75%;
+  // opacity: 0.2;
 
-      @include breakpoint(medium) {
-            width: 30vw;
-            max-width: 17rem;
-      }
-      @include breakpoint(large) {
-            max-width: 30rem;
-      }
+  @include breakpoint(medium) {
+    width: 30vw;
+    max-width: 17rem;
+  }
+  @include breakpoint(large) {
+    max-width: 30rem;
+  }
 
-      &__box {
-            position: relative;
-            aspect-ratio: 1 / 1.3;
-            // width: 65vw;
-            // width: 100%;
-            // height: 10rem;
-            background: $clr-white;
-            overflow: hidden;
-            z-index: -1;
+  &__box {
+    position: relative;
+    aspect-ratio: 1 / 1.3;
+    // width: 65vw;
+    // width: 100%;
+    // height: 10rem;
+    background: $clr-white;
+    overflow: hidden;
+    z-index: -1;
 
-            img {
-                  display: block;
-                  position: absolute;
-                  left: 50%;
-                  bottom: 0;
-                  width: 154%;
-                  transform: translate(-47%, 9%);
-            }
-      }
+    img {
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 154%;
+      transform: translate(-47%, 9%);
+    }
+  }
 
-      .date {
-            display: block;
-            position: absolute;
-            left: -1px;
-            top: 2px;
-            transform-origin: top left;
-            transform: rotate(90deg);
+  .date {
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 2px;
+    transform-origin: top left;
+    transform: rotate(90deg);
 
-            @include breakpoint(medium) {
-                  top: 100%;
-                  left: unset;
-                  right: 1px;
-                  transform: rotate(0);
-            }
-      }
+    @include breakpoint(medium) {
+      top: 100%;
+      left: unset;
+      right: 1px;
+      transform: rotate(0);
+    }
+  }
 }

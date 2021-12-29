@@ -1,0 +1,84 @@
+@use "../../utils" as *;
+
+.about-me {
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+    margin-top: 10rem;
+  }
+
+  header {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      text-align: left;
+      margin-bottom: 6rem;
+    }
+  }
+  h2 {
+  }
+
+  &__content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: "aspiring ." ". persistent" "precise ." ". esthetic" "minimalist ." ". calm" "earnest .";
+    margin: 0 auto;
+    max-width: 60rem;
+    padding-bottom: 5rem;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.86) 30%
+      ),
+      url("../../../hero-white-transparent.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include breakpoint(medium) {
+      width: 80%;
+    }
+    @include breakpoint(large) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, auto);
+      grid-template-areas: "aspiring . . persistent" ". precise . ." ". . esthetic ." ". minimalist . ." "earnest . . ." ". . . calm";
+      gap: 3rem;
+    }
+  }
+  &__word {
+    display: block;
+  }
+
+  .w1 {
+    grid-area: aspiring;
+    text-align: left;
+  }
+  .w2 {
+    grid-area: persistent;
+    text-align: center;
+  }
+  .w3 {
+    grid-area: precise;
+    text-align: right;
+  }
+  .w4 {
+    grid-area: esthetic;
+    text-align: center;
+  }
+  .w5 {
+    grid-area: minimalist;
+    text-align: right;
+  }
+  .w6 {
+    grid-area: calm;
+    text-align: right;
+  }
+  .w7 {
+    grid-area: earnest;
+    text-align: left;
+  }
+}

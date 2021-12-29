@@ -1,0 +1,47 @@
+@use "../utils" as *;
+
+.btn-secondary {
+  display: block;
+  position: relative;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 1.5rem);
+    height: calc(100% + 1rem);
+    width: 100%;
+    height: 100%;
+    background: $clr-white;
+    transition: 150ms ease-in-out;
+    transform: scaleX(0.05);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+  }
+  &::after {
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom right;
+  }
+
+  @media (hover) {
+    &:hover,
+    &:focus-visible {
+      color: $clr-black;
+    }
+    &:hover::before,
+    &:focus-visible::before,
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1) scaleY(0.5);
+    }
+  }
+}
