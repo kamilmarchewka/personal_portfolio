@@ -9,9 +9,20 @@
   }
 
   &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "contact-info" "form" "footer";
   }
 
+  &__info-wrapper {
+    grid-area: contact-info;
+  }
   &__info {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
     h3 {
       margin: 0;
     }
@@ -25,17 +36,54 @@
   }
 
   &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: form;
+    margin: 3rem 0;
   }
 }
 
 .input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
   &__label {
   }
   &__input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    transition: 150ms ease;
+
+    &:hover,
+    &:focus {
+      border-color: rgba(255, 255, 255, 1);
+    }
+  }
+  textarea {
+    min-height: 17rem;
+    resize: none;
   }
 }
 
 footer {
+  grid-area: footer;
+  position: relative;
+  left: -1.5rem;
+  width: calc(100% + 3rem);
+  padding: 1rem 1.5rem;
+  background: lighten($clr-black, 20%);
   p {
+    margin: 0;
+
+    .link {
+      color: $clr-white;
+      cursor: pointer;
+    }
   }
 }

@@ -1,17 +1,18 @@
 @use "../utils" as *;
 
 main {
-      margin: 0 auto;
-      // background: pink;
-      width: 92%;
-      max-width: 20rem;
+  margin: 0 auto;
+  // background: pink;
+  padding: 0 1.5rem;
+  max-width: 30rem;
 
-      @include breakpoint(medium) {
-            max-width: 57rem;
-            width: 92%;
-      }
-      @include breakpoint(large) {
-            max-width: 90rem;
-            width: 92%;
-      }
+  @include breakpoint(medium) {
+    max-width: 57rem;
+    width: 92%;
+    padding: 0;
+  }
+  @include breakpoint(large) {
+    max-width: 90rem;
+    width: 92%;
+  }
 }

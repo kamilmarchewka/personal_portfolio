@@ -21,7 +21,9 @@ h3 {
   text-transform: uppercase;
   font-weight: bold;
 }
-p {
+p,
+input,
+textarea {
   font-family: $ff-sans;
   font-size: rem(16);
   line-height: 1.7;
@@ -67,10 +69,14 @@ p {
 
 .btn,
 .btn-secondary {
+  font-size: rem(13);
   font-family: $ff-sans;
-  font-size: rem(15);
   text-transform: uppercase;
   letter-spacing: 0.03em;
+
+  @include breakpoint(medium) {
+    font-size: rem(15);
+  }
 }
 .btn {
   color: $clr-black;
@@ -113,4 +119,13 @@ p {
   font-weight: 300;
   text-transform: uppercase;
   font-size: rem(12);
+}
+
+footer {
+  font-family: $ff-sans;
+  text-transform: uppercase;
+
+  p {
+    font-size: rem(12);
+  }
 }

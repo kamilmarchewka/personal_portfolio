@@ -1,7 +1,11 @@
 @use "../utils" as *;
 .btn {
+  padding: rem(17) rem(40);
+  @include breakpoint(media) {
+    padding: rem(20) rem(50);
+  }
   display: block;
-  padding: rem(20) rem(50);
+
   background: $clr-white;
   transition: 150ms ease-in-out;
   cursor: pointer;

@@ -41,7 +41,7 @@
     &:focus-visible::before,
     &:hover::after,
     &:focus-visible::after {
-      transform: scaleX(1) scaleY(0.5);
+      transform: scaleX(1) scaleY(0.55);
     }
   }
 }
