@@ -44,16 +44,23 @@ function lpAnimation() {
       { yPercent: 0, stagger: 0.15 },
       "<30%"
     );
-    // nav & logo slide in
+    // nav  slide in
     lpTimeline.from(
       ".navigation",
       {
         yPercent: -101,
+        duration: 1,
       },
       "<60%"
     );
+    // date fade in
+    lpTimeline.from(".hero-img .date", {
+      x: 10,
+      autoAlpha: 0,
+      duration: 0.1,
+    });
   } else {
-    // animation for tablets and desktops
+    // animation for desktops
     const lpTimeline = gsap.timeline({
       defaults: { duration: 0.6, ease: "power3.out" },
       delay: 1,
@@ -91,7 +98,7 @@ function lpAnimation() {
         stagger: 0.1,
         ease: "back.out(2)",
       },
-      "<30%"
+      "<20%"
     );
     // navlinks fade in
     lpTimeline.from(
@@ -101,11 +108,17 @@ function lpAnimation() {
         autoAlpha: 0,
         stagger: 0.1,
       },
-      "<70%"
+      "<60%"
     );
     // date fade in
-    lpTimeline.from(".hero-img .date", { autoAlpha: 0 }, "<80%");
-    // logo expand
+    lpTimeline.from(".hero-img .date", { autoAlpha: 0 }, "<70%");
+    // logo slide in
+    lpTimeline.from(".logo", { yPercent: -101, duration: 1 }, "<50%");
+    // quotation fade in
+    lpTimeline.from(".quotation", {
+      autoAlpha: 0,
+      duration: 2.5,
+    });
   }
 }
 lpAnimation();
