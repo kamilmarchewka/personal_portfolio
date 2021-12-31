@@ -21,6 +21,45 @@ document.querySelector(".toggler").addEventListener("click", function () {
   }
 });
 
+// section idicator
+function sectionIndicatorAnimation() {
+  const indicators = document.querySelectorAll(
+    ".section-indicator__placeholder"
+  );
+  const sections = [
+    document.querySelector(".main-header"),
+    document.querySelector(".projects h2"),
+    document.querySelector(".about-me h2"),
+    document.querySelector(".contact h2"),
+  ];
+
+  let currentSection = sections[0].getAttribute("data-section");
+
+  const resetIndicators = (idicat) => {
+    idicat.forEach((i) => {
+      i.classList.remove("isActive");
+    });
+  };
+
+  document.addEventListener("scroll", () => {
+    // checking which section we are currently looking on
+    sections.forEach((section) => {
+      if (
+        section.getBoundingClientRect().top <=
+        (innerWidth / 2.3 ||
+          document.clientWidth / 2.3 ||
+          body.clientWidth / 2.3)
+      ) {
+        currentSection = section.getAttribute("data-section");
+      }
+    });
+
+    resetIndicators(indicators);
+    indicators[currentSection].classList.add("isActive");
+  });
+}
+sectionIndicatorAnimation();
+
 //landing page animations
 function lpAnimation() {
   // getting vp width
