@@ -3,24 +3,56 @@
 .contact {
   text-align: center;
 
+  @include breakpoint(large) {
+    text-align: left;
+  }
+
   header {
+    @include breakpoint(medium) {
+      margin-top: 7rem;
+      margin-bottom: 6.125rem;
+    }
   }
   h2 {
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
   }
 
   &__content {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "contact-info" "form" "footer";
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "contact-info" "form";
+    max-width: 30rem;
+    margin: 0 auto;
+
+    @include breakpoint(medium) {
+      gap: 3.25rem;
+    }
+
+    @include breakpoint(large) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "contact-info form";
+      max-width: unset;
+      margin-bottom: 4.5rem;
+    }
   }
 
   &__info-wrapper {
     grid-area: contact-info;
   }
   &__info {
+    @include breakpoint(large) {
+      text-align: right;
+    }
+
     &:not(:last-child) {
       margin-bottom: 1rem;
+      @include breakpoint(medium) {
+        margin-bottom: 2rem;
+      }
     }
 
     h3 {
@@ -41,6 +73,12 @@
     align-items: center;
     grid-area: form;
     margin: 3rem 0;
+
+    @include breakpoint(large) {
+      align-items: flex-start;
+      margin: 0;
+      max-width: 30rem;
+    }
   }
 }
 
@@ -50,6 +88,14 @@
   align-items: center;
   margin-bottom: 1.5rem;
   width: 100%;
+
+  @include breakpoint(medium) {
+    margin-bottom: 2.75rem;
+  }
+
+  @include breakpoint(large) {
+    align-items: flex-start;
+  }
   &__label {
   }
   &__input {
@@ -72,12 +118,25 @@
 }
 
 footer {
-  grid-area: footer;
-  position: relative;
-  left: -1.5rem;
-  width: calc(100% + 3rem);
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.5rem;
   background: lighten($clr-black, 20%);
+  text-align: center;
+
+  @include breakpoint(medium) {
+    padding: 2.5rem 2rem;
+  }
+
+  @include breakpoint(large) {
+    position: relative;
+    width: 50%;
+    max-width: 43rem;
+    left: 50%;
+    margin-top: -12rem;
+    text-align: right;
+
+    transform: translateX(-105%);
+  }
+
   p {
     margin: 0;
 
