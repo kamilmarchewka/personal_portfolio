@@ -51,34 +51,39 @@
   }
   &__word {
     display: block;
+    width: fit-content;
   }
 
   .w1 {
     grid-area: aspiring;
-    text-align: left;
+    justify-self: flex-start;
   }
   .w2 {
     grid-area: persistent;
-    text-align: center;
+    justify-self: center;
   }
   .w3 {
     grid-area: precise;
-    text-align: right;
+
+    justify-self: flex-end;
   }
   .w4 {
     grid-area: esthetic;
-    text-align: center;
+
+    justify-self: center;
   }
   .w5 {
     grid-area: minimalist;
-    text-align: right;
+
+    justify-self: flex-end;
   }
   .w6 {
     grid-area: calm;
-    text-align: right;
+
+    justify-self: flex-end;
   }
   .w7 {
     grid-area: earnest;
-    text-align: left;
+    justify-self: flex-start;
   }
 }

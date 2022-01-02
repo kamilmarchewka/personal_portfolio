@@ -62,9 +62,8 @@ sectionIndicatorAnimation();
 
 //landing page animations
 function lpAnimation() {
-  // getting vp width
   if ((innerWidth || document.clientWidth || body.clientWidth) < 765) {
-    // animation for phones
+    //  < 765
     const lpTimeline = gsap.timeline({
       defaults: { duration: 0.6, ease: "power3.out" },
       delay: 1,
@@ -98,7 +97,69 @@ function lpAnimation() {
       autoAlpha: 0,
       duration: 0.1,
     });
+  } else if ((innerWidth || document.clientWidth || body.clientWidth) < 1024) {
+    // < 1024
+    // animation for tablets
+    const lpTimeline = gsap.timeline({
+      defaults: { duration: 0.6, ease: "power3.out" },
+      delay: 1,
+    });
+    // img fade in
+    lpTimeline.from(".hero-img__box", {
+      xPercent: -101,
+      duration: 1.7,
+    });
+    lpTimeline.from(
+      ".hero-img",
+      {
+        xPercent: -50,
+        duration: 1.7,
+      },
+      "<"
+    );
+
+    // headlines slide in
+    lpTimeline.fromTo(
+      ".main-header h1 span",
+      {
+        xPercent: 101,
+      },
+      { xPercent: 0, duration: 1, stagger: 0.15 },
+      "<10%"
+    );
+
+    // socials fade in
+    lpTimeline.from(
+      ".social",
+      {
+        yPercent: 60,
+        autoAlpha: 0,
+        stagger: 0.1,
+        ease: "back.out(2)",
+      },
+      "<20%"
+    );
+    // navlinks fade in
+    lpTimeline.from(
+      ".nav-link",
+      {
+        y: 5,
+        autoAlpha: 0,
+        stagger: 0.1,
+      },
+      "<60%"
+    );
+    // date fade in
+    lpTimeline.from(".hero-img .date", { autoAlpha: 0 }, "<70%");
+    // logo slide in
+    lpTimeline.from(".logo", { yPercent: -101, duration: 1 }, "<50%");
+
+    // quotation initial state
+    gsap.set(".quotation__quote", { xPercent: -60, autoAlpha: 0 });
+    gsap.set(".quotation__author", { autoAlpha: 0 }, "<30%");
+    gsap.set(".quotation__sign", { autoAlpha: 0, yPercent: 100 }, "<");
   } else {
+    // >= 1024
     // animation for desktops
     const lpTimeline = gsap.timeline({
       defaults: { duration: 0.6, ease: "power3.out" },
@@ -154,60 +215,162 @@ function lpAnimation() {
     // logo slide in
     lpTimeline.from(".logo", { yPercent: -101, duration: 1 }, "<50%");
     // quotation fade in
-    lpTimeline.from(".quotation", {
-      autoAlpha: 0,
-      duration: 2.5,
-    });
+    lpTimeline.from(
+      ".quotation",
+      {
+        autoAlpha: 0,
+        duration: 2.5,
+      },
+      "<20%"
+    );
   }
 }
 lpAnimation();
 
-// projects section animation
 function projectsAnimation() {
-  const cards = document.querySelectorAll(".project-card");
+  const cards = gsap.utils.toArray(".project-card");
 
   ScrollTrigger.matchMedia({
     // small
     "(max-width: 764px)": function () {
-      // setup animations and ScrollTriggers for screens 960px wide or greater...
-      // These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
-
-      let cards = gsap.utils.toArray(".project-card");
       cards.forEach((card) => {
-        gsap.from(card, {
-          y: 20,
-          autoAlpha: 0,
+        // set initial state
+        gsap.set(card.children, { autoAlpha: 0, y: 150 });
+        gsap.to(card.children, {
+          y: 0,
+          autoAlpha: 1,
           duration: 0.7,
+          stagger: 0.25,
           scrollTrigger: {
             trigger: card,
           },
+          clearProps: "all",
         });
       });
-
-      // cards.forEach((card) => {
-      //   const img = card.querySelector(".project-card__img-box");
-      //   const headline = card.querySelector("h3");
-      //   const description = card.querySelector("p");
-      //   const buttons = card.querySelectorAll("button");
-
-      //   gsap.from(card, {
-      //     y: 20,
-      //     autoAlpha: 0,
-      //     scrollTrigger: {
-      //       trigger: card,
-      //       markers: true,
-      //     },
-      //     clearProps: "all",
-      //   });
-      // });
     },
 
-    // medium
-    "(min-width: 600px) and (max-width: 959px)": function () {
-      // The ScrollTriggers created inside these functions are segregated and get
-      // reverted/killed when the media query doesn't match anymore.
+    "(min-width: 765px)": function () {
+      const cards = gsap.utils.toArray(".project-card");
+
+      cards.forEach((card) => {
+        // set initial state
+        gsap.set(card.children, { autoAlpha: 1, y: 0 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "0% 100%",
+            end: "100% 0%",
+            scrub: 1.3,
+          },
+        });
+
+        tl.fromTo(
+          card.children[1],
+          {
+            y: 70,
+          },
+          {
+            y: 0,
+          }
+        );
+        tl.fromTo(
+          card.children[2],
+          {
+            y: 50,
+          },
+          {
+            y: 0,
+          },
+          "<"
+        );
+        tl.fromTo(
+          card.children[0],
+          {
+            y: 30,
+          },
+          {
+            y: 0,
+          },
+          "<"
+        );
+      });
+      return function () {
+        tl.kill();
+      };
     },
   });
 }
-
 projectsAnimation();
+
+// quotation animation on tablets
+ScrollTrigger.matchMedia({
+  // quotation scroll animation
+  "(min-width:765px) and (max-width:1023px)": function () {
+    gsap.set(".quotation__quote", { xPercent: -60, autoAlpha: 0 });
+    gsap.set(".quotation__author", { autoAlpha: 0 }, "<30%");
+    gsap.set(".quotation__sign", { autoAlpha: 0, yPercent: 100 }, "<");
+
+    const qtl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".quotation",
+        start: "0% 80%",
+        end: "100% 50%",
+        scrub: 1.2,
+      },
+    });
+
+    qtl.to(".quotation__quote", { xPercent: 0, autoAlpha: 1 });
+    qtl.to(".quotation__author", { autoAlpha: 0.3 }, "<30%");
+    qtl.to(".quotation__sign", { autoAlpha: 1, yPercent: 0 }, "<");
+
+    return function () {
+      console.log("changing width");
+      gsap.set(".quotation__quote", { xPercent: 0, autoAlpha: 1 });
+      gsap.set(".quotation__author", { autoAlpha: 0.3 });
+      gsap.set(".quotation__sign", { autoAlpha: 1, yPercent: 0 });
+
+      qtl.kill();
+    };
+  },
+});
+
+function aboutMeAnimation() {
+  ScrollTrigger.matchMedia({
+    "(min-width:765px)": () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about-me__content",
+          start: "0% 50%",
+        },
+      });
+
+      gsap.set(".w1", { xPercent: 200, yPercent: 350, autoAlpha: 0 });
+      gsap.set(".w2", { xPercent: -100, yPercent: 100, autoAlpha: 0 });
+      gsap.set(".w3", { yPercent: 150, autoAlpha: 0 });
+      gsap.set(".w4", { xPercent: -150, autoAlpha: 0 });
+      gsap.set(".w5", { xPercent: 50, yPercent: -50, autoAlpha: 0 });
+      gsap.set(".w6", { xPercent: -350, yPercent: -250, autoAlpha: 0 });
+      gsap.set(".w7", { xPercent: 500, yPercent: -500, autoAlpha: 0 });
+
+      tl.to(".w1", { xPercent: 0, yPercent: 0, autoAlpha: 1 }, "<10%");
+      tl.to(".w2", { xPercent: 0, yPercent: 0, autoAlpha: 1 }, "<10%");
+      tl.to(".w3", { yPercent: 0, autoAlpha: 1 }, "<10%");
+      tl.to(".w4", { xPercent: 0, autoAlpha: 1 }, "<10%");
+      tl.to(".w5", { xPercent: 0, yPercent: 0, autoAlpha: 1 }, "<10%");
+      tl.to(".w6", { xPercent: 0, yPercent: 0, autoAlpha: 1 }, "<10%");
+      tl.to(".w7", { xPercent: 0, yPercent: 0, autoAlpha: 1 }, "<10%");
+
+      return function () {
+        gsap.set([".w1", ".w1", ".w2", ".w3", ".w4", ".w5", ".w6", ".w7"], {
+          xPercent: 0,
+          yPercent: 0,
+          autoAlpha: 1,
+        });
+
+        tl.kill();
+      };
+    },
+  });
+}
+aboutMeAnimation();
