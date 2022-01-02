@@ -161,3 +161,53 @@ function lpAnimation() {
   }
 }
 lpAnimation();
+
+// projects section animation
+function projectsAnimation() {
+  const cards = document.querySelectorAll(".project-card");
+
+  ScrollTrigger.matchMedia({
+    // small
+    "(max-width: 764px)": function () {
+      // setup animations and ScrollTriggers for screens 960px wide or greater...
+      // These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
+
+      let cards = gsap.utils.toArray(".project-card");
+      cards.forEach((card) => {
+        gsap.from(card, {
+          y: 20,
+          autoAlpha: 0,
+          duration: 0.7,
+          scrollTrigger: {
+            trigger: card,
+          },
+        });
+      });
+
+      // cards.forEach((card) => {
+      //   const img = card.querySelector(".project-card__img-box");
+      //   const headline = card.querySelector("h3");
+      //   const description = card.querySelector("p");
+      //   const buttons = card.querySelectorAll("button");
+
+      //   gsap.from(card, {
+      //     y: 20,
+      //     autoAlpha: 0,
+      //     scrollTrigger: {
+      //       trigger: card,
+      //       markers: true,
+      //     },
+      //     clearProps: "all",
+      //   });
+      // });
+    },
+
+    // medium
+    "(min-width: 600px) and (max-width: 959px)": function () {
+      // The ScrollTriggers created inside these functions are segregated and get
+      // reverted/killed when the media query doesn't match anymore.
+    },
+  });
+}
+
+projectsAnimation();
