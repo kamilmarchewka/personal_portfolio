@@ -130,8 +130,16 @@
   li {
     margin: 0.5rem 0;
 
+    &:nth-of-type(3) {
+      display: none;
+    }
+
     @include breakpoint(medium) {
       margin: 0;
+
+      &:nth-of-type(3) {
+        display: block;
+      }
     }
   }
 

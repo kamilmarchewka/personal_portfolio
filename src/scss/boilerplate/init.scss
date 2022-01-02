@@ -7,6 +7,14 @@
 }
 html {
   // width: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  @include breakpoint(medium) {
+    scroll-padding-top: 6rem;
+  }
+  @include breakpoint(large) {
+    scroll-padding-top: 8rem;
+  }
 }
 body {
   box-sizing: border-box;

@@ -7,7 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 // opening and closing nav
 const navContent = document.querySelector(".navigation__content");
-document.querySelector(".toggler").addEventListener("click", function () {
+const toggler = document.querySelector(".toggler");
+const navLinks = document.querySelectorAll(".nav-link");
+
+toggler.addEventListener("click", function () {
   if (this.getAttribute("aria-expanded") === "false") {
     this.setAttribute("aria-expanded", "true");
     navContent.classList.add("nav-opening");
@@ -19,6 +22,23 @@ document.querySelector(".toggler").addEventListener("click", function () {
       navContent.classList.remove("nav-closing");
     }, 260);
   }
+});
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (getComputedStyle(toggler).display === "none") return;
+
+    if (toggler.getAttribute("aria-expanded") === "false") {
+      toggler.setAttribute("aria-expanded", "true");
+      navContent.classList.add("nav-opening");
+    } else {
+      toggler.setAttribute("aria-expanded", "false");
+      navContent.classList.add("nav-closing");
+      setTimeout(() => {
+        navContent.classList.remove("nav-opening");
+        navContent.classList.remove("nav-closing");
+      }, 260);
+    }
+  });
 });
 
 // section idicator

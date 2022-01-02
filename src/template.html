@@ -11,7 +11,6 @@
     <!-- favicon -->
     <!-- sizes="192x192" -->
     <!-- sizes="180x180" -->
-
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./favicon.png" />
@@ -22,7 +21,7 @@
       content="Kamil Marchewka | Front-end Developer &amp; UX Designer Portfolio"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./favicon.png" />
+    <meta property="og:image" content="./og_home.png" />
     <meta property="og:url" content="https://www.kamilmarchewka.design" />
 
     <title>
@@ -55,7 +54,7 @@
     </div>
     <main>
       <!-- main header -->
-      <header data-section="0" class="main-header">
+      <header id="home" data-section="0" class="main-header">
         <div class="logo">
           <svg
             width="43"
@@ -110,32 +109,47 @@
           <div id="nav-content" class="navigation__content">
             <ul>
               <li>
-                <a class="nav-link" href="#">home</a>
+                <a class="nav-link" href="#home">home</a>
               </li>
               <li>
-                <a class="nav-link" href="#">projects</a>
+                <a class="nav-link" href="#projects">projects</a>
               </li>
               <li>
-                <a class="nav-link" href="#">about me</a>
+                <a class="nav-link" href="#aboutMe">about me</a>
               </li>
               <li>
-                <a class="nav-link" href="#">contact</a>
+                <a class="nav-link" href="#contact">contact</a>
               </li>
             </ul>
             <div class="socials navigation__socials">
-              <a href="#" class="social"
+              <a
+                target="_blanc"
+                href="https://github.com/kamilmarchewka?tab=repositories"
+                class="social"
                 ><i class="fab fa-github-square"></i
               ></a>
-              <a href="#" class="social"
+              <a
+                target="_blanc"
+                href="https://www.pinterest.ca/kamil_web_dev/"
+                class="social"
                 ><i class="fab fa-pinterest-square"></i
               ></a>
-              <a href="#" class="social"
+              <a
+                target="_blanc"
+                href="https://www.facebook.com/kamil.marchewka.370/"
+                class="social"
                 ><i class="fab fa-facebook-square"></i
               ></a>
-              <a href="#" class="social"
+              <a
+                target="_blanc"
+                href="https://www.behance.net/kamilmarchewka1"
+                class="social"
                 ><i class="fab fa-behance-square"></i
               ></a>
-              <a href="#" class="social"
+              <a
+                target="_blanc"
+                href="https://dribbble.com/kamil_design/about"
+                class="social"
                 ><i class="fab fa-dribbble-square"></i
               ></a>
             </div>
@@ -160,19 +174,34 @@
         </h1>
 
         <div class="socials">
-          <a href="#" class="social social--light"
+          <a
+            target="_blanc"
+            href="https://github.com/kamilmarchewka?tab=repositories"
+            class="social social--light"
             ><i class="fab fa-github-square"></i
           ></a>
-          <a href="#" class="social social--light"
+          <a
+            target="_blanc"
+            href="https://www.pinterest.ca/kamil_web_dev/"
+            class="social social--light"
             ><i class="fab fa-pinterest-square"></i
           ></a>
-          <a href="#" class="social social--light"
+          <a
+            target="_blanc"
+            href="https://www.facebook.com/kamil.marchewka.370/"
+            class="social social--light"
             ><i class="fab fa-facebook-square"></i
           ></a>
-          <a href="#" class="social social--light"
+          <a
+            target="_blanc"
+            href="https://www.behance.net/kamilmarchewka1"
+            class="social social--light"
             ><i class="fab fa-behance-square"></i
           ></a>
-          <a href="#" class="social social--light"
+          <a
+            target="_blanc"
+            href="https://dribbble.com/kamil_design/about"
+            class="social social--light"
             ><i class="fab fa-dribbble-square"></i
           ></a>
         </div>
@@ -193,7 +222,7 @@
       </header>
       <!-- main header -- end -->
       <!-- my recent works section -->
-      <section class="projects">
+      <section id="projects" class="projects">
         <header class="projects__header">
           <h2 data-section="1">My recent projects.</h2>
           <button class="btn">see more</button>
@@ -275,7 +304,7 @@
       </section>
       <!-- my recent works section -- end -->
       <!-- about me section -->
-      <section class="about-me">
+      <section id="aboutMe" class="about-me">
         <header>
           <h2 data-section="2">few words about me.</h2>
         </header>
@@ -291,7 +320,7 @@
       </section>
       <!-- about me section -- end -->
       <!-- contact page -->
-      <section class="contact">
+      <section id="contact" class="contact">
         <header>
           <h2 data-section="3">Let's get in touch.</h2>
         </header>
@@ -300,7 +329,11 @@
           <div class="contact__info-wrapper">
             <div class="contact__info">
               <h3 class="label">email</h3>
-              <span>kamilmarchewka.design@ gmail.com</span>
+              <span
+                ><a href="mailto:kamilmarchewka.design@gmail.com"
+                  >kamilmarchewka.design@ gmail.com</a
+                ></span
+              >
             </div>
             <div class="contact__info">
               <h3 class="label">phone</h3>
@@ -332,11 +365,29 @@
     <footer>
       <p>
         2021 | kamil marchewka | all rights reserved | find me on:
-        <span class="link">facebook</span>, <span class="link">behance</span>,
-        <span class="link">dribble</span>, <span class="link">pinterest</span> |
-        leave me a message on kamilmarchewka.design@gmail.com or call me
-        <span class="link">+48 111 222 333</span> | for more information about
-        my projects, check my <span class="link">github</span>.
+        <a href="https://www.facebook.com/kamil.marchewka.370/" class="link"
+          >facebook</a
+        >,
+        <a href="https://www.behance.net/kamilmarchewka1" class="link"
+          >behance</a
+        >,
+        <a href="https://dribbble.com/kamil_design/about" class="link"
+          >dribble</a
+        >,
+        <a href="https://www.pinterest.ca/kamil_web_dev/" class="link"
+          >pinterest</a
+        >
+        | leave me a message on
+        <a href="mailto: kamilmarchewka.design@gmail.com" class="link"
+          >kamilmarchewka.design@gmail.com</a
+        >
+        or call me <span class="link">+48 111 222 333</span> | for more
+        information about my projects, check my
+        <a
+          href="https://github.com/kamilmarchewka?tab=repositories"
+          class="link"
+          >github</a
+        >.
       </p>
     </footer>
   </body>
