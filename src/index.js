@@ -146,6 +146,7 @@ function lpAnimation() {
         y: 5,
         autoAlpha: 0,
         stagger: 0.1,
+        clearProps: "all",
       },
       "<60%"
     );
@@ -190,13 +191,15 @@ function lpAnimation() {
     );
 
     // socials fade in
-    lpTimeline.from(
+    lpTimeline.fromTo(
       ".social",
+      { yPercent: 60, autoAlpha: 0 },
       {
-        yPercent: 60,
-        autoAlpha: 0,
+        yPercent: 0,
+        autoAlpha: 0.4,
         stagger: 0.1,
         ease: "back.out(2)",
+        clearProps: "all",
       },
       "<20%"
     );
@@ -207,6 +210,7 @@ function lpAnimation() {
         y: 5,
         autoAlpha: 0,
         stagger: 0.1,
+        clearProps: "all",
       },
       "<60%"
     );
