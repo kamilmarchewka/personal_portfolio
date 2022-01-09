@@ -24,8 +24,8 @@ module.exports = merge(common, {
           to: "og_home.png",
         },
         {
-          from: "src/favicon",
-          to: "favicon",
+          from: "src/favicons",
+          to: "favicons",
         },
       ],
     }),
