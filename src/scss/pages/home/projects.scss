@@ -50,6 +50,27 @@
       @include breakpoint(large) {
         gap: 15rem;
       }
+
+      .coming-soon {
+        width: 100vw;
+        overflow: hidden;
+
+        .row {
+          display: flex;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+        }
+
+        span {
+          display: block;
+          flex-shrink: 0;
+          padding: 0 0.3em;
+          font-size: 10vw;
+          font-weight: 700;
+          font-family: $ff-sans;
+          opacity: 0.25;
+        }
+      }
     }
 
     li {

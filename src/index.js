@@ -9,6 +9,26 @@ import { init } from "@emailjs/browser";
 import emailjs from "@emailjs/browser";
 init("user_zt1zjf6n7wcllS3fggzFs");
 
+// DELETE THIS AFTER ADDING PROJECT
+function projectsComingSoon() {
+  gsap.fromTo(
+    ".coming-soon .row",
+    {
+      xPercent: 0,
+    },
+    {
+      xPercent: -100,
+      scrollTrigger: {
+        trigger: ".coming-soon .row",
+        start: "0% 100%",
+        end: "100% 0%",
+        scrub: 3,
+      },
+    }
+  );
+}
+projectsComingSoon();
+
 // opening and closing nav
 const navContent = document.querySelector(".navigation__content");
 const toggler = document.querySelector(".toggler");
