@@ -562,12 +562,23 @@ function aboutMeAnimation() {
 }
 aboutMeAnimation();
 
+const showAlert = (alert) => {
+  alert.classList.add("isVisible");
+  setTimeout(() => {
+    alert.classList.remove("isVisible");
+  }, 7000);
+};
+
 document.querySelector(".contact__form").addEventListener("submit", (e) => {
   const userEmail = document.querySelector("#email").value;
   const userName = document.querySelector("#name").value;
   const userMessage = document.querySelector("#message").value;
 
+  const alert = document.querySelector(".alert");
+
   e.preventDefault();
+
+  showAlert(document.querySelector(".sending-alert"));
 
   console.log("form submition");
   console.log(userEmail, userName, userMessage);
@@ -581,9 +592,13 @@ document.querySelector(".contact__form").addEventListener("submit", (e) => {
   emailjs.send("service_rgc56e3", "template_1l0zn5c", templateParams).then(
     function (response) {
       console.log("SUCCESS!", response.status, response.text);
+      alert.innerHTML = "<p>Your message has been sent.</p>";
+      showAlert(alert);
     },
     function (error) {
       console.log("FAILED...", error);
+      alert.innerHTML = "<p>Something went wrong. Try again later.</p>";
+      showAlert(alert);
     }
   );
 });
