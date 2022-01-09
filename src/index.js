@@ -5,6 +5,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { init } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
+init("user_zt1zjf6n7wcllS3fggzFs");
+
 // opening and closing nav
 const navContent = document.querySelector(".navigation__content");
 const toggler = document.querySelector(".toggler");
@@ -557,3 +561,29 @@ function aboutMeAnimation() {
   });
 }
 aboutMeAnimation();
+
+document.querySelector(".contact__form").addEventListener("submit", (e) => {
+  const userEmail = document.querySelector("#email").value;
+  const userName = document.querySelector("#name").value;
+  const userMessage = document.querySelector("#message").value;
+
+  e.preventDefault();
+
+  console.log("form submition");
+  console.log(userEmail, userName, userMessage);
+
+  const templateParams = {
+    message_fromName: userName,
+    message: userMessage,
+    message_fromEmail: userEmail,
+  };
+
+  emailjs.send("service_rgc56e3", "template_1l0zn5c", templateParams).then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
+    },
+    function (error) {
+      console.log("FAILED...", error);
+    }
+  );
+});

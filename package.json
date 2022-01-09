@@ -31,6 +31,7 @@
             "webpack-merge": "^5.8.0"
       },
       "dependencies": {
+            "@emailjs/browser": "^3.3.1",
             "clean-webpack-plugin": "^4.0.0",
             "gsap": "^3.9.1"
       }
