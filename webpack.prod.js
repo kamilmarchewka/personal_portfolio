@@ -23,6 +23,10 @@ module.exports = merge(common, {
           from: "src/og_home.png",
           to: "og_home.png",
         },
+        // {
+        //   from: "src/favicon",
+        //   to: "favicon",
+        // },
       ],
     }),
   ],
