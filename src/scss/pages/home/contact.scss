@@ -130,7 +130,7 @@
 
 footer {
   padding: 1rem 1.5rem;
-  background: lighten($clr-black, 20%);
+  background: lighten($clr-black, 4%);
   text-align: center;
   @include breakpoint(medium) {
     padding: 2rem 2rem;

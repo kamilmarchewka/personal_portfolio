@@ -1,38 +1,39 @@
 @use "../utils" as *;
 
 .quotation {
-      // display of flex
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      position: relative;
-      max-width: 24.18em;
-      &__sign {
-            display: block;
-            width: rem(109);
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform: translateY(-40%);
-      }
+  // display of flex
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  max-width: 24.18em;
+  &__sign {
+    display: block;
+    width: rem(109);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-40%);
+    opacity: 0.3;
+  }
 
-      &__quote {
-      }
+  &__quote {
+  }
 
-      &__author {
-            position: relative;
-            margin-left: auto;
-            opacity: 0.3;
+  &__author {
+    position: relative;
+    margin-left: auto;
+    opacity: 0.4;
 
-            &::before {
-                  content: "";
-                  display: block;
-                  position: absolute;
-                  right: calc(100% + 10px);
-                  top: 50%;
-                  width: 1rem;
-                  height: 1px;
-                  background-color: $clr-white;
-            }
-      }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: calc(100% + 10px);
+      top: 50%;
+      width: 1rem;
+      height: 1px;
+      background-color: $clr-white;
+    }
+  }
 }

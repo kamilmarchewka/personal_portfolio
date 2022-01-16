@@ -24,17 +24,36 @@
     position: relative;
     width: fit-content;
     margin: 0 auto;
+    max-width: 26rem;
 
     @include breakpoint(medium) {
       grid-area: img;
     }
+    @include breakpoint(large) {
+      max-width: 34rem;
+    }
 
     img {
       display: block;
-      aspect-ratio: 1 / 1.2;
       width: 100%;
-      max-width: 20rem;
-      object-fit: cover;
+      // box-reflect: bottom;
+      // aspect-ratio: 1 / 1.2;
+      // width: 100%;
+      // object-fit: contain;
+      box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.5);
+    }
+    .desktop-preview {
+    }
+    .phone-preview {
+      display: none;
+
+      @include breakpoint(large) {
+        display: block;
+        position: absolute;
+        bottom: -17%;
+        right: -3rem;
+        width: 30%;
+      }
     }
 
     .date {
@@ -62,6 +81,7 @@
     @include breakpoint(large) {
       max-width: 25em;
       align-self: flex-end;
+      padding-left: 3rem;
     }
 
     p {
