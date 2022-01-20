@@ -9,6 +9,57 @@ import { init } from "@emailjs/browser";
 import emailjs from "@emailjs/browser";
 init("user_zt1zjf6n7wcllS3fggzFs");
 
+const introAnim = () => {
+  const tl = gsap.timeline();
+
+  tl.fromTo(
+    "#intro #logo-k-letter",
+    {
+      yPercent: -70,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power4.out",
+    }
+  );
+  tl.fromTo(
+    "#intro #logo-m-letter",
+    {
+      yPercent: 70,
+      opacity: 0,
+    },
+    {
+      yPercent: -0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power4.out",
+    },
+    "<"
+  );
+  tl.set(["#intro #logo-k-letter", "#intro #logo-m-letter"], {
+    transformOrigin: "center",
+  });
+  tl.to(["#intro #logo-k-letter", "#intro #logo-m-letter"], {
+    scale: 15,
+    duration: 1,
+    ease: "power4.in",
+  });
+  tl.to(
+    "#intro",
+    {
+      opacity: 0,
+      duration: 1,
+      ease: "power4.in",
+      onComplete: () => document.querySelector("#intro").classList.add("hide"),
+    },
+    "<"
+  );
+  return tl;
+};
+
 // DELETE THIS AFTER ADDING PROJECT
 function projectsComingSoon() {
   gsap.fromTo(
@@ -27,7 +78,7 @@ function projectsComingSoon() {
     }
   );
 }
-projectsComingSoon();
+// projectsComingSoon();
 
 // opening and closing nav
 const navContent = document.querySelector(".navigation__content");
@@ -113,58 +164,7 @@ function lpAnimation() {
       delay: 1,
     });
     //intro animation
-    lpTimeline.fromTo(
-      "#intro #logo-k-letter",
-      {
-        yPercent: -70,
-        opacity: 0,
-      },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
-      }
-    );
-    lpTimeline.fromTo(
-      "#intro #logo-m-letter",
-      {
-        yPercent: 70,
-        opacity: 0,
-      },
-      {
-        yPercent: -0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
-      },
-      "<"
-    );
-    lpTimeline.to("#intro #logo-k-letter", {
-      yPercent: 70,
-      duration: 1,
-      ease: "power4.in",
-    });
-    lpTimeline.to(
-      "#intro #logo-m-letter",
-      {
-        yPercent: -70,
-        duration: 1,
-        ease: "power4.in",
-      },
-      "<"
-    );
-    lpTimeline.to(
-      "#intro",
-      {
-        opacity: 0,
-        duration: 1,
-        ease: "power4.in",
-        onComplete: () =>
-          document.querySelector("#intro").classList.add("hide"),
-      },
-      "<"
-    );
+    lpTimeline.add(introAnim());
     // img slide in
     lpTimeline.from(".hero-img__box", {
       yPercent: 101,
@@ -202,58 +202,7 @@ function lpAnimation() {
       delay: 1,
     });
     //intro animation
-    lpTimeline.fromTo(
-      "#intro #logo-k-letter",
-      {
-        yPercent: -70,
-        opacity: 0,
-      },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
-      }
-    );
-    lpTimeline.fromTo(
-      "#intro #logo-m-letter",
-      {
-        yPercent: 70,
-        opacity: 0,
-      },
-      {
-        yPercent: -0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
-      },
-      "<"
-    );
-    lpTimeline.to("#intro #logo-k-letter", {
-      yPercent: 70,
-      duration: 1,
-      ease: "power4.in",
-    });
-    lpTimeline.to(
-      "#intro #logo-m-letter",
-      {
-        yPercent: -70,
-        duration: 1,
-        ease: "power4.in",
-      },
-      "<"
-    );
-    lpTimeline.to(
-      "#intro",
-      {
-        opacity: 0,
-        duration: 1,
-        ease: "power4.in",
-        onComplete: () =>
-          document.querySelector("#intro").classList.add("hide"),
-      },
-      "<"
-    );
+    lpTimeline.add(introAnim());
     // img fade in
     lpTimeline.from(".hero-img__box", {
       xPercent: -101,
@@ -317,58 +266,7 @@ function lpAnimation() {
       delay: 1,
     });
     //intro animation
-    lpTimeline.fromTo(
-      "#intro #logo-k-letter",
-      {
-        yPercent: -70,
-        opacity: 0,
-      },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
-      }
-    );
-    lpTimeline.fromTo(
-      "#intro #logo-m-letter",
-      {
-        yPercent: 70,
-        opacity: 0,
-      },
-      {
-        yPercent: -0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
-      },
-      "<"
-    );
-    lpTimeline.to("#intro #logo-k-letter", {
-      yPercent: 70,
-      duration: 1,
-      ease: "power4.in",
-    });
-    lpTimeline.to(
-      "#intro #logo-m-letter",
-      {
-        yPercent: -70,
-        duration: 1,
-        ease: "power4.in",
-      },
-      "<"
-    );
-    lpTimeline.to(
-      "#intro",
-      {
-        opacity: 0,
-        duration: 1,
-        ease: "power4.in",
-        onComplete: () =>
-          document.querySelector("#intro").classList.add("hide"),
-      },
-      "<"
-    );
+    lpTimeline.add(introAnim());
     // img fade in
     lpTimeline.from(".hero-img__box", {
       xPercent: -101,
