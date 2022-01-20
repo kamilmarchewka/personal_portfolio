@@ -39,14 +39,23 @@ const introAnim = () => {
     },
     "<"
   );
-  tl.set(["#intro #logo-k-letter", "#intro #logo-m-letter"], {
-    transformOrigin: "center",
-  });
-  tl.to(["#intro #logo-k-letter", "#intro #logo-m-letter"], {
-    scale: 15,
+  tl.to("#intro #logo-k-letter", {
+    yPercent: 70,
+    opacity: 0,
     duration: 1,
     ease: "power4.in",
   });
+  tl.to(
+    "#intro #logo-m-letter",
+    {
+      yPercent: -70,
+      opacity: 0,
+
+      duration: 1,
+      ease: "power4.in",
+    },
+    "<"
+  );
   tl.to(
     "#intro",
     {
